@@ -1,0 +1,6 @@
+{
+  "PrivateKey": "your ...",
+  "uri": "your ...",
+  "port": "8000",
+  "env": "development"
+}

@@ -1,0 +1,65 @@
+doctype html
+html(lang='en')
+  
+  head
+    
+    title &#x53B;&#x576;&#x57F;&#x565;&#x580;&#x576;&#x565;&#x57F; &#x56D;&#x561;&#x576;&#x578;&#x582;&#x569; 
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1') 
+    
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css')     
+    link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')   
+    link(rel='stylesheet', href='https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css')
+  
+    link(rel='stylesheet', href='/stylesheets/mystyle.css') 
+  
+  body
+    
+    block content
+
+    script(src='https://kit.fontawesome.com/a076d05399.js')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js') 
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js')  
+    script(src='https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js')
+    
+    script(src='/javascripts/browserStore.js')
+    script(src='/javascripts/browserShop.js')
+    script(src='/javascripts/browserCart.js')
+    script(src='/javascripts/browserUser.js')
+    script(src='/javascripts/browserAdmin.js')  
+    script(src='/javascripts/browserPagin.js')
+    script(src='/javascripts/browserAjax.js')
+
+    script.
+      $(document).ready(function(){ 
+        //- 
+        userId = getcookieId(); // եթե իրական Id չի գտնում, վերադարձնում է guest
+        localToCart(userId);
+        //- 
+        render(1) 
+        //- 
+        if ( localStorage.getItem('dash') == 'true') {
+            $('#admin_Admin').show()
+        } else {
+            $('#admin_Admin').hide()
+        }
+        //- 
+        showcookieResults();
+        //- 
+        $('.alert-autocloseable-warning').hide();
+        $('#messAlert').hide();
+        //- 
+        $('#alertShop .close').click(function() {
+          $('#alertShop').hide();
+        });
+      }); 
+      //- 
+      //- 
+      $(document).ready(function(){
+        $("#myInput").on("keyup", function() {
+          var value = $(this).val().toLowerCase();
+          $("#myShop div").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+          });
+        });
+      });

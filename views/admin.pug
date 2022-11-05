@@ -1,0 +1,108 @@
+br
+
+.container(style='font-size:16px; text-align: left')
+	.alert.alert-warning
+		button.close(type='button', data-dismiss='alert', aria-hidden='true')
+			| &times;
+		|                 
+		span.glyphicon.glyphicon-info-sign
+		|  
+		strong Ծանուցում կայքի կողմից՝
+		|                 
+		hr.message-inner-separator
+		|                 
+		p
+			| Կայքին ծանոթանալու համար կարիք կունենաք օգտվելու երկու ֆիկտիվ հաշիվներից՝
+			br
+			br
+			|	- Ադմինիստրատորի
+			ul
+				li
+					|	email: adminuser@a.com
+				li
+					|	password: aaaaaa
+			br
+			|	- Սովորական օգտատիրոջ
+			ul
+				li
+					|	 email: plainuser@a.com
+				li
+					|	password: aaaaaa
+			br
+			br
+			|	- PayPal փոխանցումների համակարգը թեսթավորելու համար այցելեք
+			br
+			br
+			ul
+				li
+					|	sandbox.paypal.com
+			br
+			|	կայք և գրանցեք ուսուցողական հաշիվ։
+
+.container
+
+	.alert.alert-info.visible-xs(style='font-size:14px;')
+		div
+			strong Միայն
+			|	գրանցված օգտատերերը կարող է admin-ին ․․․     
+		br     
+		div
+			a.btn.btn-info.center-block(data-toggle='modal', data-target='#contact', data-original-title='', style='font-size:14px;') Ուղարկել հաղորդագրություն
+	.alert.alert-info.text-left.visible-sm.visible-md.visible-lg( style='font-size:14px;')
+		strong Միայն
+		|	գրանցված օգտատերերը կարող է admin-ին ․․․
+
+		a.btn.btn-xs.btn-info.pull-right(data-toggle='modal', data-target='#contact', data-original-title='', , style='font-size:14px; width:230px;') Ուղարկել հաղորդագրություն    
+	
+.container#admin_Admin
+
+	.alert.alert-warning.visible-xs(style='font-size:14px')
+		div
+			strong Միայն
+			|	թույլտվություն ունենալու դեպքում կարող եք  ․․․     
+		br     
+		div
+			a.btn.btn-warning.center-block(href='/dashboard', style='font-size:14px;') Go Admin Dashboard
+	.alert.alert-warning.text-left.visible-sm.visible-md.visible-lg(style='font-size:14px')
+		strong Միայն
+		|	թույլտվություն ունենալու դեպքում կարող եք ․․․
+			
+		a.btn.btn-xs.btn-warning.pull-right(href='/dashboard', style='font-size:14px; width:230px;') Go Admin Dashboard
+
+#contact.modal.fade(tabindex='-1', role='dialog', aria-labelledby='contactLabel', aria-hidden='true')
+	.modal-dialog.panel-body
+		.panel.panel-primary(style='max-width:400px;')
+			.panel-heading
+				button.close(type='button', data-dismiss='modal', aria-hidden='true') &times;
+				|                             
+				h4#contactLabel.panel-title
+					span(lass='glyphicon glyphicon-info-sign')
+					|	Any questions? Feel free to contact us.
+			|
+			
+			#messAlert.alert.alert-warning.text-left
+			
+			form#contactReset(action='javascript:;', method='post', accept-charset='utf-8').panel-body
+
+				.modal-body(style='padding: 5px;')
+					.row
+						.col-lg-12.col-md-12.col-sm-12(style='padding-bottom: 10px;')
+							input#contact_1.form-control(name='username', placeholder='Username', type='text', required='', autofocus='')
+					|                                 
+					.row
+						.col-lg-12.col-md-12.col-sm-12(style='padding-bottom: 10px;')
+							input#contact_2.form-control(name='email', placeholder='E-mail', type='text', required='')
+					|                                 
+					.row
+						.col-lg-12.col-md-12.col-sm-12(style='padding-bottom: 10px;')
+							input#contact_3.form-control(name='subject', placeholder='Subject', type='text', required='')
+					|                                 
+					.row
+						.col-lg-12.col-md-12.col-sm-12
+							textarea#contact_4.form-control(style='resize:vertical;', placeholder='Message...', rows='6', name='comment', required='')
+					| 
+
+				.panel-body.well(style='margin-bottom: -5px; margin-top: 5px;')
+					input.btn.btn-success(style='float: left;', type='submit', value='Send' onclick='messSend(); return false')
+					input.btn.btn-warning(style='float: left; margin-left:+10px;', type='reset', value='Clear')
+					button.btn.btn-default.btn-close(style='float: right;', type='button', data-dismiss='modal') Close

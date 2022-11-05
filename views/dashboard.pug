@@ -1,0 +1,67 @@
+doctype html
+html(lang='en')
+  
+	head
+		meta(charset='utf-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1') 
+    
+		link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css')     
+		link(rel='stylesheet', href='/stylesheets/mystyle.css')  
+		link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet') 
+		link(href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', rel='stylesheet') 
+
+		style.
+			.col-lg-3:hover {
+				margin-top: -3px
+			} 
+  
+	body
+		.container.text-center
+			h2 Admin Dashboard
+			br
+			.container
+				.row
+					.col-lg-3
+						.panel.panel-warning
+							.panel-heading
+								.row
+									.col-xs-4.text-left
+										i.fa.fa-barcode.fa-5x
+									|                             
+									.col-xs-8.text-right
+										p.announcement-heading 
+										|                                 
+										p.announcement-text  Պահեստ
+							|                     
+							a(href='/store')
+								.panel-footer.announcement-bottom
+									.row
+										.col-xs-4.text-left
+											| Դիտել
+										|                                 
+										.col-xs-8.text-right
+											i.fa.fa-arrow-circle-right
+					
+					.col-lg-3
+						.panel.panel-success
+							.panel-heading
+								.row
+									.col-xs-4.text-left
+										i.fa.fa-comments.fa-5x
+									|                             
+									.col-xs-8.text-right
+										p.announcement-heading 
+										|                                 
+										p.announcement-text  Հաղորդագրություններ
+							|                     
+							a(href='/mess')
+								.panel-footer.announcement-bottom
+									.row
+										.col-xs-4.text-left
+											| Կարդալ
+										|                                 
+										.col-xs-8.text-right
+											i.fa.fa-arrow-circle-right
+
+		script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js') 
+		script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js')  

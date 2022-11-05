@@ -1,0 +1,29 @@
+////////////////////////////////////////////////////
+var express = require('express');
+var router = express.Router();
+
+////////////////////////////////////////////////////
+const {
+    messValidator,
+    messValidationResult
+} = require('../middleware/messValidator');
+
+////////////////////////////////////////////////////
+var {
+    postMessSend,
+    readMessage,
+    delMessage
+} = require('../controllers/messController');
+
+////////////////////////////////////////////////////
+router.post('/send', messValidator, messValidationResult, postMessSend);
+
+////////////////////////////////////////////////////
+const checkAuth = require('../middleware/jwtToken');
+router.get('/', checkAuth, readMessage);
+
+////////////////////////////////////////////////////
+router.post('/del', checkAuth, delMessage);
+
+////////////////////////////////////////////////////
+module.exports = router;

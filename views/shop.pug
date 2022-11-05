@@ -1,0 +1,42 @@
+br
+br
+#alertShop.alert.alert-warning.alert-normal-warning(hidden='hidden')
+  button.close(type='button') &times;
+  p#alertShop_1 
+
+.row#shopFilter
+  .col-lg-3.col-md-4.col-sm-6.col-xs-12.pull-right
+    form.search-form(action='')
+      .form-group.has-feedback
+        label.sr-only(for='search') Search
+        |             &#x9;&#x9;
+        input#myInput.form-control(type='text', placeholder='Filter...')
+        |               &#x9;&#x9;
+        span.glyphicon.glyphicon-filter.form-control-feedback
+
+.row#myShop
+  
+.panel.panel-default.panel-body#shopPagination
+  .row
+    #shopPagination_1.hidden-xs.col-sm-4.col-md-3.col-lg-2
+      .hint-text Showing 
+      b #{from} 
+      | to 
+      b #{to} 
+      | of 
+      b #{total} 
+      | entries 
+    #shopPagination_2.hidden-xs.col-sm-5.col-md-6.col-lg-8.text-right
+    #shopPagination_2b.hidden-sm.hidden-md.hidden-lg.col-xs-7.text-left
+    .col-xs-5.col-sm-3.col-md-3.col-lg-2.text-right
+      span Show
+      |                             
+      select#shopPagination_3(onchange='select_Pagination(this)')
+        option 4                           
+        option 8                               
+        option 12                                
+        option all
+      |                              
+      span entries
+
+.hidden#temp_Div= jsonItemsStr  

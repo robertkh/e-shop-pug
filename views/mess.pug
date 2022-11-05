@@ -1,0 +1,53 @@
+doctype html
+html(lang='en')
+  head
+    //- title &#x53B;&#x576;&#x57F;&#x565;&#x580;&#x576;&#x565;&#x57F; &#x56D;&#x561;&#x576;&#x578;&#x582;&#x569; 
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1') 
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css')     
+    link(rel='stylesheet', href='/stylesheets/mystyle.css')  
+    
+  body
+    .container.text-center
+      h3#maintitle &#x555;&#x563;&#x57F;&#x561;&#x57F;&#x565;&#x580;&#x565;&#x580;&#x56B; &#x570;&#x561;&#x572;&#x578;&#x580;&#x564;&#x561;&#x563;&#x580;&#x578;&#x582;&#x569;&#x575;&#x578;&#x582;&#x576;&#x576;&#x565;&#x580;&#x589;
+
+      .container#readMess
+        each item in messages 
+          .panel.panel-primary
+            .hidden
+              |  #{item.id} 
+            .panel-heading
+              h3.panel-title.name.text-left 
+                |  #{item.username}
+          
+              span.pull-right.clickable
+                i.glyphicon.glyphicon-chevron-up
+            
+            .panel-body.text-left
+              .row
+                .col-xs-3.col-sm-2.col-md-1
+                  strong.text-primary E-mail:
+                |     
+                .col-xs-9.col-sm-10.col-md-11
+                  pre.mail= item.email 
+                
+              .row 
+                .col-xs-3.col-sm-2.col-md-1
+                  strong.text-primary Subject:
+                |     
+                .col-xs-9.col-sm-10.col-md-11
+                  pre.subject= item.subject
+            
+              .row
+                .col-xs-3.col-sm-2.col-md-1
+                  strong.text-primary Message:
+                |     
+                .col-xs-9.col-sm-10.col-md-11
+                  pre.mess= item.message 
+                    
+              button.btn.btn-danger.btn-block(type='button', onclick='delMess(this); return false' ) 
+                | Հեռացնել հաղորդագրությունը
+
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')     
+    script(src='/javascripts/browserAjax.js')
+    script(src='/javascripts/browserMess.js')

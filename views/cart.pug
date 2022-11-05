@@ -1,0 +1,33 @@
+h3.panel-body &#x554;&#x561;&#x580;&#x57F;&#x56B; &#x57A;&#x561;&#x580;&#x578;&#x582;&#x576;&#x561;&#x56F;&#x578;&#x582;&#x569;&#x575;&#x578;&#x582;&#x576;&#x568;               
+
+.well.cart-items.table-responsive
+  table.table
+    thead
+      tr
+        th &#x546;&#x56F;&#x561;&#x580;                                
+        th &#x531;&#x576;&#x578;&#x582;&#x576;                              
+        th &#x554;&#x561;&#x576;&#x561;&#x56F;                               
+        th &#x533;&#x56B;&#x576;                              
+        th &#x533;&#x578;&#x582;&#x574;&#x561;&#x580;                              
+        th &#x540;&#x565;&#x57C;&#x561;&#x581;&#x576;&#x565;&#x56C;                      
+    tbody#tableBody               
+
+#cartAlert.alert.alert-danger.text-left(hidden)
+  button.close(type='button',  onclick='$(this).parent().hide()')
+    | &times;
+  | 
+  span.glyphicon.glyphicon-ban-circle              
+  |  
+  strong  Warning Message
+  |                 
+  hr.message-inner-separator
+  |                 
+  p
+
+.cart-total.row
+  .col-xs-6.col-sm-4.text-left
+    strong.cart-total-title &#x538;&#x576;&#x564;&#x570;&#x561;&#x576;&#x578;&#x582;&#x580; &#x563;&#x578;&#x582;&#x574;&#x561;&#x580;&#x589;                        
+    span.cart-total-price.float-left $0                  
+  .col-sm-6                  
+  .col-xs-6.col-sm-2
+    button.btn.btn-primary.btn-md.btn-block.active.float-right(type='button', onclick='checkout()') Checkout           

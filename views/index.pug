@@ -1,0 +1,36 @@
+extends layout
+
+block content
+  
+  .container.text-center
+    h2#maintitle &#x53B;&#x576;&#x57F;&#x565;&#x580;&#x576;&#x565;&#x57F; &#x56D;&#x561;&#x576;&#x578;&#x582;&#x569;  
+    ul.nav.nav-tabs
+      li.active
+        a(data-toggle='tab', href='#shop')
+          i.fas.fa-shopping-basket(style='font-size:17px')
+          |  Shop            
+      li
+        a(data-toggle='tab', href='#cart')
+          i.fas.fa-cart-plus(style='font-size:17px')                   
+          span  Cart                  
+          span#cartItemsQty.badge(style='background-color: red;')  0          
+      li
+        a(data-toggle='tab', href='#user')
+          i.fas.fa-user-alt(style='font-size:17px;')  
+          |  User           
+      li
+        a(data-toggle='tab', href='#admin') Admin
+        //- a(data-toggle='tab', href='#admin', aria-expanded='false')  Admin          
+    .tab-content
+      
+      #shop.tab-pane.fade.in.active
+        include shop.pug
+      
+      #cart.tab-pane.fade
+        include cart.pug
+      
+      #user.tab-pane.fade
+        include user.pug
+      
+      #admin.tab-pane.fade
+        include admin.pug 

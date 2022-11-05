@@ -1,0 +1,62 @@
+#store
+  
+  .table-title
+    #tablerow.row
+      .col-sm-6.col-xs-6
+        h2#store &#x54A;&#x561;&#x570;&#x565;&#x57D;&#x57F;                       
+      .col-sm-6.col-xs-6
+        button.btn.btn-info.add-new(type='button')
+          i.fa.fa-plus
+          |  Add New  
+                       
+  .table-responsive.panel-body
+    table.table.table-bordered.admin-table#example(style='width:100%').order-column.hover
+      thead
+        tr
+          th &#x546;&#x56F;&#x561;&#x580;                               
+          th &#x531;&#x576;&#x578;&#x582;&#x576;                              
+          th &#x554;&#x561;&#x576;&#x561;&#x56F;                              
+          th &#x533;&#x56B;&#x576;($)                            
+          th &#x53D;&#x574;&#x562;&#x561;&#x563;&#x580;&#x565;&#x56C;                     
+      tbody  
+        each val in adminStorItems
+          tr
+            td
+              img(onerror=' this.src="/images/phold.png"', src='/images/' + val.itemName + '.jpg', width='50', height='50')
+            td= val.itemName
+            td= val.itemQty                       
+            td= val.itemPrice
+            td
+              a.add(title='Add', data-toggle='tooltip') 
+                i.material-icons &#xE03B;                     
+              a.edit(title='Edit', data-toggle='tooltip')
+                i.material-icons &#xE254;                  
+              a.delete(title='Delete', data-toggle='tooltip')
+                i.material-icons &#xE872;
+
+#alert.alert.alert-warning.text-left
+
+#fileupload.well
+  form#uploadForm(ref='uploadForm', action='https://e-shop-web.herokuapp.com/upload', method='post', enctype='multipart/form-data')
+    .row.row-no-gutters
+      .col-md-5.col-sm-6
+        h5 &#x546;&#x56F;&#x561;&#x580;&#x576;&#x565;&#x580;&#x56B; &#x57E;&#x565;&#x580;&#x562;&#x565;&#x57C;&#x576;&#x578;&#x582;&#x574; ... (File max size: 100KB)                               
+      .col-md-5.col-sm-6
+        .input-group.image-preview
+          input.form-control.image-preview-filename(type='text', disabled='disabled')                                
+          span.input-group-btn
+            button.btn.btn-default.image-preview-clear(type='button', style='display:none;')
+              span.glyphicon.glyphicon-remove
+              |  Clear                                          
+            .btn.btn-default.image-preview-input
+              span.glyphicon.glyphicon-folder-open                                           
+              span.image-preview-input-title Browse                                             
+              input(type='file', accept='image/png, image/jpeg, image/gif, image/jpg', name='myFile')                              
+      .col-md-2.hidden-xs.hidden-sm
+        button.fileupload.btn.btn-info.waves-effect.waves-light
+          i.fa.fa-upload
+          |  &nbsp; Upload  
+    #vis-xs-file-upload-button.visible-xs.visible-sm
+       button.fileupload.btn.btn-info.waves-effect.waves-light.btn-block
+          i.fa.fa-upload
+          |  &nbsp; Upload  

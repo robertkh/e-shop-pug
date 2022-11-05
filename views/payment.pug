@@ -1,0 +1,177 @@
+doctype html
+html(lang='en')
+
+	head
+		meta(charset='UTF-8')
+		|
+		meta(name='viewport', content='width=device-width, initial-scale=1.0')
+		| 
+		title Document
+		| 
+		link(href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', rel='stylesheet')
+		| 
+		link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css')
+		|
+		script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+		| 
+		script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js')
+		| 
+		style.
+			#payment_Div .card_Img:hover {
+			background-color: rgba(165, 207, 248, 0.781);
+			}
+			#payment_Div .card_Img {
+			border: 1px solid;
+			border-color: rgba(165, 207, 248, 0.781);
+			}
+			#payment_Div input:focus~i {
+			color: rgb(99, 186, 226);
+			}
+			#payment_Div i~input:focus {
+			color: rgb(99, 186, 226);
+			}
+  
+	body
+		br
+		#payment_Div.row.panel-body
+			.col-sm-12
+				.panel.panel-info.center-block(style='max-width: 720px; ')
+					.panel-heading(style='background-color: rgb(99, 177, 212); color: rgb(255, 255, 255);')
+						strong &#x54E;&#x573;&#x561;&#x580;&#x565;&#x56C; &#x570;&#x561;&#x577;&#x56B;&#x57E;-&#x561;&#x57A;&#x580;&#x561;&#x576;&#x584;&#x561;&#x563;&#x56B;&#x580;&#x568;
+					| 
+					.panel-body
+						.row
+							.col-sm-12.form-group
+								h4
+									| &#x54E;&#x573;&#x561;&#x580;&#x574;&#x561;&#x576; &#x565;&#x572;&#x561;&#x576;&#x561;&#x56F; 
+									small  (&#x568;&#x576;&#x57F;&#x580;&#x565;&#x56C; &#x578;&#x580;&#x587;&#x567; &#x574;&#x565;&#x56F;&#x568;)
+								| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+								hr
+						// Ajstex cart-eri nkarnern en
+						.row
+							.col-sm-3.col-xs-6.form-group
+								a(data-toggle='tab', href='#paypal__warning')
+									.btn.btn-payment-warning.btn-block.card_Img(style='max-width: 200px;').center-block
+										img(src='images/paypal.png', width='100%')
+							|
+							.col-sm-3.hidden-xs.form-group
+							|
+							.col-sm-3.hidden-xs.form-group
+							| 
+							.col-sm-3.col-xs-6.form-group
+								a(data-toggle='tab', href='#vm-card__warning')
+									.btn.btn-payment-warning.btn-block.card_Img(style='max-width: 200px;').center-block
+										img(src='images/vm-card.png', width='100%')
+						|
+						.row
+							.tab-content
+								
+								#vm-card__warning.tab-pane.fade
+									form
+										.col-sm-12.form-group.text-center
+											hr
+											| 
+											h4 Visa/Mastercard
+										|
+										.col-sm-12
+											.form-group.has-feedback
+												input.form-control(type='text', name='card_holder', placeholder='Full name on card')
+												| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+												i.fa.fa-address-card.fa-lg.fa-fix.form-control-feedback
+										| 
+										.col-sm-12
+											.form-group.has-feedback
+												input.form-control.input-default(type='text', name='card-number', placeholder='Valid Card Number')
+												| 
+												i.fa.fa-credit-card-alt.fa-lg.fa-fix.form-control-feedback
+										| 
+										.col-sm-12
+											.row
+												.col-sm-2
+													.form-group
+														select.form-control(name='card_month')
+															option(value='') Month
+															| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+															option 1
+															| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+															option 2
+															| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+															option 3
+															| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+															option 4
+															| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+															option 5
+															| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+															option 6
+															| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+															option 7
+															| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+															option 8
+															| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+															option 9
+															| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+															option 10
+															| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+															option 11
+															| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+															option 12
+														// <i class="fa fa-angle-down fa-lg fa-fix form-control-feedback"></i>
+												| 
+												.col-sm-2
+													.form-group
+														select.form-control(name='card_year')
+															option(value='') Year
+															| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+															option 2020
+															| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+															option 2021
+															| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+															option 2022
+															| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+															option 2023
+															| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+															option 2024
+															| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+															option 2025
+															| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+															option 2026
+															| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+															option 2027
+															| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+															option 2028
+															| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+															option 2029
+															| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+															option 2030
+													// <i class="fa fa-angle-down fa-lg fa-fix form-control-feedback"></i>
+												| 
+												.col-sm-2
+													.form-group.has-feedback
+														input.form-control(type='password', name='card_cvc', placeholder='CVC')
+														| 
+														i.fa.fa-ellipsis-h.fa-lg.fa-fix.form-control-feedback(aria-hidden='true')
+												| 
+												.col-sm-6
+													.form-group.input-group
+														span.input-group-addon
+															i.fa.fa-usd
+														| 
+														input.form-control(type='number', min='1', name='value', placeholder='Payment Amount')
+										|
+										.col-sm-12
+											button.btn.btn-info.btn-block(type='submit') Այս եղանակը դեռ չի գործում
+								
+								#paypal__warning.tab-pane.fade.in.active
+									form(action='/paypal/pay', method='post')
+										.col-sm-12.form-group.text-center
+											hr
+											|
+											h4 Pay with PayPal
+										| 
+										.col-sm-12
+											.form-group.has-feedback
+												input.form-control(type='text', name='description', placeholder='Նշումներ գնված ապրանքների վերաբերյալ')
+												// <i class="fa fa-address-card fa-lg fa-fix form-control-feedback"></i>
+												i.fa.fa-sticky-note.fa-lg.fa-fix.form-control-feedback
+										.col-sm-12.form-group
+											button.btn.btn-info.btn-block(type='submit') Կատարել վճարումը

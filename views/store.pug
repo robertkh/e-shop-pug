@@ -1,0 +1,24 @@
+doctype html
+html(lang='en')
+  
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1') 
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css')     
+    link(rel='stylesheet', href='/stylesheets/mystyle.css')  
+    link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')   
+   
+    link(rel='stylesheet', href='https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css')
+  
+  body
+    .container.text-center
+      h2#maintitle &#x53B;&#x576;&#x57F;&#x565;&#x580;&#x576;&#x565;&#x57F; &#x56D;&#x561;&#x576;&#x578;&#x582;&#x569;  
+
+      include storeExt.pug
+
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js') 
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js')  
+    script(src='https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js')
+    
+    script(src='/javascripts/browserStore.js')
+    script(src='/javascripts/browserAjax.js') 
